@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="AracBakim.jnlp">
+  <information>
+    <title>AracBakim</title>
+    <vendor>alfa</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="AracBakim.jar" size="18050" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="aracbakim.AracBakim"  name="AracBakim" />
+  <update check="always"/>
+</jnlp>

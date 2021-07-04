@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800" prefWidth="1200" style="-fx-background-color: #4B0082;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aracbakim.FXMLDocumentController">
+    <children>
+      <AnchorPane prefHeight="109.0" prefWidth="1200.0" style="-fx-background-color: #FF1493; -fx-border-radius: 15px 15px; -fx-background-radius: 15px 15px 15px 15px;">
+         <children>
+            <Label alignment="CENTER" layoutX="510.0" layoutY="14.0" prefHeight="32.0" prefWidth="80.0" text="KM">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="240.0" layoutY="14.0" prefHeight="32.0" prefWidth="91.0" text="AD SOYAD">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="386.0" layoutY="14.0" prefHeight="32.0" prefWidth="91.0" text="PLAKA">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="627.0" layoutY="14.0" prefHeight="32.0" prefWidth="126.0" text="SERVİS TARİHİ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="SahibiField" layoutX="222.0" layoutY="46.0" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 15px 15px 15px 15px; -fx-background-color: #cd1076;" />
+            <TextField fx:id="PlakaField" layoutX="369.0" layoutY="45.0" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 15px 15px 15px 15px; -fx-background-color: #cd1076 #cd1076;" />
+            <TextField fx:id="KmField" layoutX="523.0" layoutY="46.0" prefHeight="26.0" prefWidth="55.0" style="-fx-background-radius: 15px 15px 15px 15px; -fx-background-color: #cd1076 #cd1076;" />
+            <DatePicker fx:id="TarihDatePicker" layoutX="600.0" layoutY="46.0" style="-fx-background-radius: 8px 8px 8px 8px; -fx-background-color: #cd1076 #cd1076;" />
+            <Button fx:id="KaydetButton" layoutX="823.0" layoutY="42.0" mnemonicParsing="false" onAction="#Save" style="-fx-background-radius: 15px; -fx-border-radius: 15px 15px; -fx-background-color: #00ee76;" text="Kaydet" />
+            <Button fx:id="KmKontrolButton" layoutX="909.0" layoutY="43.0" mnemonicParsing="false" onAction="#CheckKm" style="-fx-border-width: 5px; -fx-background-radius: 15px 15px; -fx-background-color: #ffe413;" text="KM KONTROL" />
+            <Button fx:id="ListeleButton" layoutX="1030.0" layoutY="43.0" mnemonicParsing="false" onAction="#TableColumnList" style="-fx-background-radius: 15px; -fx-background-color: #fffafa;" text="LİSTELE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="109.0" prefHeight="691.0" prefWidth="200.0" style="-fx-background-color: #4B0072; -fx-border-color: #FFD700#FFD700; -fx-border-width: 5px 5px; -fx-border-radius: 20px 20px  20px 20px;">
+         <children>
+            <Label layoutX="50.0" layoutY="65.0" text="ARAÇ TÜRÜ" textFill="GOLD">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="AracTuruBox" layoutX="25.0" layoutY="95.0" prefWidth="150.0" style="-fx-background-radius: 10px 10px 10px 10px;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="RaceCar" />
+                        <String fx:value="CityCar" />
+                    </FXCollections>
+                </items>
+             </ComboBox>
+            <Label layoutX="70.0" layoutY="139.0" text="MARKA" textFill="GOLD">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="MarkaBox" layoutX="25.0" layoutY="164.0" prefWidth="150.0" style="-fx-background-radius: 10px 10px 10px 10px;">
+                       <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Audi R8" />
+                                <String fx:value="Audi RS6" />
+                                <String fx:value="Aston Martin DB11" />
+                                <String fx:value="Aston Martin Vulcan" />
+                                <String fx:value="Aston Martin Vantage" />
+                                <String fx:value="AlfaRomeo Giulia" />
+                                <String fx:value="BMW M4" />
+                                <String fx:value="BMW M5" />
+                                <String fx:value="Bugatti Chiron" />
+                                <String fx:value="Chevrolet Camaro ZL1 " />
+                                <String fx:value="Chevrolet Corvette" />
+                                <String fx:value="Ferrari 458 Speciale" />
+                                <String fx:value="Ferrari F40" />
+                                <String fx:value="Ferrari 488 GTB" />
+                                <String fx:value="Ferrari Enzo" />
+                                <String fx:value="Ford Ranger" />
+                                <String fx:value="Ford Mustang Shelby GT500" />
+                                <String fx:value="Ford Mustang  GT350" />
+                                <String fx:value="Ford Fusion" />
+                                <String fx:value="Ford Focus" />
+                                <String fx:value="Honda Civic" />
+                                <String fx:value="Hennessey Venom GT" />
+                                <String fx:value="jaguar c-x75" />
+                                <String fx:value="jaguar F-Type" />
+                                <String fx:value="Lamborghini Aventador" />
+                                <String fx:value="Lamborghini Huracan" />
+                                <String fx:value="Lamborghini Veneno" />
+                                <String fx:value="Lamborghini Gallardo" />
+                                <String fx:value="Lamborghini Urus" />
+                                <String fx:value="Lamborghini Murciélago" />
+                                <String fx:value="Lamborghini Countach" />
+                                <String fx:value="Lexus  LFA" />
+                                <String fx:value="Lotus Elise " />
+                                <String fx:value="McLaren P1" />
+                                <String fx:value="McLaren 720s" />
+                                <String fx:value="McLaren 675LT" />
+                                <String fx:value="Mazda RX7" />
+                                <String fx:value="Mazda RX8" />
+                                <String fx:value="Mazda MX5" />
+                                <String fx:value="Mazda 3" />
+                                <String fx:value="Mercedes-AMG GT" />
+                                <String fx:value="Mercedes C 180" />
+                                <String fx:value="Mercedes-AMG G 63" />
+                                <String fx:value="Mercedes A180" />
+                                <String fx:value="Mercedes GLA" />
+                                <String fx:value="Mitsubishi Lancer Evolution VIII" />
+                                <String fx:value="Mitsubishi Evolution VII" />
+                                <String fx:value="Mitsubishi Eclipse" />
+                                <String fx:value="Mitsubishi Lancer" />
+                                <String fx:value="Nissan R32 Skyline GT-R" />
+                                <String fx:value="Nissan R33 Skyline GT-R" />
+                                <String fx:value="Nissan R34 Skyline GT-R" />
+                                <String fx:value="Nissan R35  GT-R" />
+                                <String fx:value="Opel Astra" />
+                                <String fx:value="Pagani Zonda" />
+                                <String fx:value="Pagani Imola" />
+                                <String fx:value="Pagani Huayra" />
+                                <String fx:value="Peugeot 208" />
+                                <String fx:value="Peugeot 307" />
+                                <String fx:value="Peugeot 308" />
+                                <String fx:value="Peugeot 508" />
+                                <String fx:value="Peugeot 3008" />
+                                <String fx:value="Seat Leon" />
+                                <String fx:value="SSC Tuatara" />
+                                <String fx:value="Subaru Impreza" />
+                                <String fx:value="Toyota Supra" />
+                                <String fx:value="Tesla Model x" />
+                                <String fx:value="Tesla Model s" />
+                                <String fx:value="Tesla Model 3" />
+                                <String fx:value="Volkswagen Golf" />
+                                <String fx:value="Volvo s60" />
+                                <String fx:value="Volvo s90" />
+                                <String fx:value="Volvo v40" />
+                             </FXCollections>
+                       </items>
+            </ComboBox>
+            
+            <Label layoutX="18.0" layoutY="321.0" text="TUNNİNG SHOP" textFill="GOLD">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ModelBox" layoutX="24.0" layoutY="237.0" prefWidth="150.0" style="-fx-background-radius: 10px 10px 10px 10px;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="2021" />    
+                    <String fx:value="2020" />
+                    <String fx:value="2019" />
+                    <String fx:value="2018" />
+                    <String fx:value="2017" />
+                    <String fx:value="2016" />
+                    <String fx:value="2015" />
+                    <String fx:value="2014" />
+                    <String fx:value="2013" />
+                    <String fx:value="2012" />
+                    <String fx:value="2011" />
+                    <String fx:value="2010" />
+                    <String fx:value="2009" />
+                    <String fx:value="2008" />
+                    <String fx:value="2007" />
+                    <String fx:value="2006" />
+                    <String fx:value="2005" />
+                    <String fx:value="2004" />
+                    <String fx:value="2003" />
+                    <String fx:value="2002" />
+                    <String fx:value="2001" />
+                    <String fx:value="2000" />
+                    <String fx:value="1999" />
+                    <String fx:value="1998" />
+                    <String fx:value="1997" />
+                    <String fx:value="1996" />
+                    <String fx:value="1995" />
+                    <String fx:value="1994" />
+                    <String fx:value="1993" />
+                    <String fx:value="1992" />
+                    <String fx:value="1991" />
+                    <String fx:value="1990" />
+                    </FXCollections>
+                </items>
+            </ComboBox>    
+            <CheckBox fx:id="EngineBox" layoutX="44.0" layoutY="364.0" mnemonicParsing="false" text="ENGİNE" textFill="GOLD" AnchorPane.leftAnchor="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="N2OBox" layoutX="44.0" layoutY="427.0" mnemonicParsing="false" text="N2O" textFill="GOLD" AnchorPane.leftAnchor="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="RocketBunnyBox" layoutX="41.0" layoutY="460.0" mnemonicParsing="false" text="R.BUNY" textFill="GOLD" AnchorPane.leftAnchor="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="TurboBox" layoutX="48.0" layoutY="396.0" mnemonicParsing="false" text="TURBO" textFill="GOLD" AnchorPane.leftAnchor="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="CarbonFiberBox" layoutX="50.0" layoutY="492.0" mnemonicParsing="false" text="CARBON F" textFill="GOLD" AnchorPane.leftAnchor="45.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="68.0" layoutY="209.0" text="MODEL" textFill="GOLD">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="983.0" layoutY="109.0" prefHeight="691.0" prefWidth="214.0" style="-fx-background-color: #4B0072; -fx-border-color: #FFD700#FFD700; -fx-border-width: 5px 5px; -fx-border-radius: 20px 20px;">
+         <children>
+            <TextArea fx:id="NotBirakArea" layoutX="38.0" layoutY="66.0" prefHeight="327.0" prefWidth="150.0" style="-fx-background-color: #ff1493;" AnchorPane.bottomAnchor="308.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="66.0" />
+            <Label layoutX="57.0" layoutY="29.0" text="Not Bırak" textAlignment="JUSTIFY" textFill="GOLD">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="198.0" layoutY="109.0" prefHeight="691.0" prefWidth="787.0" style="-fx-background-color: #4B0072; -fx-border-color: #FFD700#FFD700; -fx-border-width: 5px 5px; -fx-border-radius: 20px 20px;">
+         <children>
+            <TableView fx:id="TableView" layoutX="46.0" layoutY="63.0" prefHeight="327.0" prefWidth="696.0" style="-fx-border-width: 15px 15px 15px; -fx-background-radius: 10px 10px 10px; -fx-background-color: #ff1493;">
+              <columns>
+                <TableColumn fx:id="SahipColumn" prefWidth="158.85617065429688" style="-fx-background-radius: 15px 15px;" text="SAHİBİ" />
+                  <TableColumn fx:id="PlakaColumn" minWidth="2.412506103515625" prefWidth="95.14382934570312" style="-fx-background-radius: 15px 15px;" text="PLAKA" />
+                  <TableColumn fx:id="AracTuruColumn" prefWidth="88.697021484375" style="-fx-background-radius: 15px 15px;" text="TÜR" />
+                  <TableColumn fx:id="MarkaColumn" prefWidth="103.59600830078125" style="-fx-background-radius: 15px 15px;" text="MARKA" />
+                  <TableColumn fx:id="ModelColumn" prefWidth="95.87823486328125" style="-fx-background-radius: 15px 15px;" text="MODEL" />
+                  <TableColumn fx:id="KmColumn" prefWidth="64.60699462890625" style="-fx-background-radius: 15px 15px;" text="KM" />
+                  <TableColumn fx:id="DateColumn" prefWidth="91.984619140625" style="-fx-background-radius: 15px 15px;" text="TARİH" />
+              </columns>
+            </TableView>
+            <Label layoutX="359.0" layoutY="407.0" prefHeight="34.0" prefWidth="85.0" text="PLAKA" textAlignment="JUSTIFY" textFill="GOLD">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PlakaAraField" layoutX="286.0" layoutY="461.0" prefHeight="26.0" prefWidth="214.0" style="-fx-background-radius: 15px 15px 15px 15px;" />
+            <Button fx:id="SilButton" contentDisplay="CENTER" layoutX="410.0" layoutY="497.0" mnemonicParsing="false" onAction="#Delete" prefHeight="32.0" prefWidth="69.0" style="-fx-background-radius: 15px; -fx-border-radius: 15px 15px; -fx-background-color: RED;" text="SİL" />
+            <Button fx:id="DeleteTableButton" contentDisplay="CENTER" layoutX="333.0" layoutY="540.0" mnemonicParsing="false" onAction="#ClearTable" style="-fx-border-width: 5px; -fx-background-radius: 15px 15px; -fx-background-color: #ffe413;" text="TABLOYU TEMİZLE" />
+            <Button fx:id="AraButton" contentDisplay="CENTER" layoutX="308.0" layoutY="497.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="65.0" style="-fx-background-radius: 15px; -fx-border-radius: 15px 15px; -fx-background-color: #00ee76;" text="ARA" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

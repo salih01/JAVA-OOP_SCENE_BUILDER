@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AracBakim">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/AracBakim.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
